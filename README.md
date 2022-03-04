@@ -11,4 +11,5 @@ Set of AWS services used: S3, API Gateway, Lambda, Lex, SQS, SNS, OpenSearch(Ela
 
 
 
-![image](https://user-images.githubusercontent.com/90811500/156689672-0374c622-c50f-46f7-afa6-a1a3558f2119.png)
+![image](https://user-images.githubusercontent.com/90811500/156690057-c2944f8c-5c44-4bdb-9466-34da9b4001d0.png)
+
