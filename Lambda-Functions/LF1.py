@@ -165,6 +165,7 @@ def isvalid_date(date):
 
     
 def validateInput(city, cuisine, count, date, time, phone, intentRequest):
+	sameDate = False
 	if city is not None and city.lower() != "manhattan":
 		return build_validation_result(False, 'City', 'Sorry! We only serve in Manhattan at the moment. Please try again!')
         
@@ -183,8 +184,11 @@ def validateInput(city, cuisine, count, date, time, phone, intentRequest):
 										   'Please try entering your preferred time again.')
 		elif datetime.datetime.strptime(date, '%Y-%m-%d').date() < datetime.date.today():
 			return build_validation_result(False, 'Date', 'Please enter a date that has not passed.')
+		
+		if datetime.datetime.strptime(date, '%Y-%m-%d').date() == datetime.date.today():
+			sameDate = True
 
-	if time:
+	if time is not None and sameDate:
 		hour, minute = time.split(':')
 		hour = parse_int(hour)
 		minute = parse_int(minute)
